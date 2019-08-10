@@ -44,7 +44,7 @@ var pokemonRepository = (function () {
     return $.ajax(apiUrl,{dataType:'json'})
       .then(function(item){
 
-      $.each(item.results, function(index,item){
+      $.each(item.results, function(item){
 
         var pokemon = {
           name: item.name,
@@ -94,7 +94,7 @@ var pokemonRepository = (function () {
 //Call function in repository
 pokemonRepository.loadList().then(function() {
   // Now the data is loaded!
-  pokemonRepository.getAll().forEach(function(pokemon){
-    pokemonRepository.addListItem(pokemon);
+  $.each(pokemons, function(pokemon){
+      addListItem(pokemon);
   });
 });
