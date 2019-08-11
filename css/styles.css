@@ -20,15 +20,19 @@
 }
 
 header {
-  background-color: white;
+  background-color: var(--light-grey);
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
   padding: 10px;
+
 }
 
 .main_list {
+  list-style-type: none;
   max-width: 900px;
-  margin: 20 auto;
-  padding: 15px;
+}
+
+.pokemon_list {
+  list-style-type: none;
 }
 
 .pokedex_name {
@@ -50,7 +54,7 @@ header {
 }
 
 body{
-  background-color: var(--light-grey);
+  background-color: white;
   font-family:'Advent Pro', sans-serif;
   font-weight:var(--standard-font-weight);
   font-size: 16px;
@@ -84,15 +88,18 @@ h3 {
   /* overwrites browser defaults and resets the border */
     border: none;
     display: inline-block;
+    margin: 3px;
   /* takes the font from the outer container */
     font-family: inherit;
+    font-size: 24px;
   /* styles the background color, font color, and text decoration (underline, etc.) of the button */
     background-color: var(--secondary-color);
     color: white;
     text-decoration: none;
   /*adds spacing to the button */
-    padding: 6px;
+    padding: 10px;
     border-radius: 10px;
+    width: 200px;
   /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
     border-bottom: 2px solid rgba(0, 0, 0, 0.3);
     transition: 0.4s opacity;
