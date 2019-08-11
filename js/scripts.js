@@ -27,7 +27,7 @@ var pokemonRepository = (function () {
 
      var $pokemonInfoButton = $(pokemonInfoButton);
 
-     pokemonInfoButton.Text(pokemon.name);
+     pokemonInfoButton.text(pokemon.name);
      //create event function
      pokemonInfoButton.click(function(){
        showDetails(pokemon)
@@ -44,7 +44,7 @@ var pokemonRepository = (function () {
     return $.ajax(apiUrl,{dataType:'json'})
       .then(function(item){
 
-      $.each(item.results, function(item){
+      item.results.forEach(function(item){
 
         var pokemon = {
           name: item.name,
@@ -94,7 +94,7 @@ var pokemonRepository = (function () {
 //Call function in repository
 pokemonRepository.loadList().then(function() {
   // Now the data is loaded!
-  $.each(pokemons, function(pokemon){
-      addListItem(pokemon);
+  pokemonRepository.getAll().forEach(function(pokemon){
+      pokemonRepository.addListItem(pokemon);
   });
 });
